@@ -1,0 +1,319 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11541,        310]
+NotebookOptionsPosition[     11165,        292]
+NotebookOutlinePosition[     11522,        308]
+CellTagsIndexPosition[     11479,        305]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"I1", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"2", ",", "20", ",", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "69.5", ",", "134.7", ",", "203.5", ",", "272.4", ",", "341.7", ",", 
+     "410.0", ",", "479.0", ",", "548.0", ",", "616.0", ",", "678"}], "}"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I2", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"0.5", ",", "2", ",", "0.5"}], "]"}], ",", 
+      RowBox[{"Range", "[", 
+       RowBox[{"4", ",", "20", ",", "2"}], "]"}]}], "}"}], "//", 
+    "Flatten"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"R", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "3.583", ",", "2.037", ",", "1.503", ",", "1.230", ",", "0.775", ",", 
+      "0.605", ",", "0.511", ",", "0.451", ",", "0.408", ",", "0.375", ",", 
+      "0.3511", ",", "0.3312", ",", "0.3144"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"form2export1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"{", "\"\<I(mA)\>\"", "}"}], ",", "I1"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"{", "\"\<V(mV)\>\"", "}"}], ",", "V"}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"form2export2", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Join", "[", 
+       RowBox[{
+        RowBox[{"{", "\"\<I(mA)\>\"", "}"}], ",", "I2"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Join", "[", 
+       RowBox[{
+        RowBox[{"{", "\"\<R(k\[CapitalOmega])\>\"", "}"}], ",", "R"}], 
+       "]"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\<~/OneDrive/Medical Sensor/exp5_data1.xlsx\>\"", ",", "form2export1", 
+    ",", "\"\<XLSX\>\""}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Export", "[", 
+    RowBox[{
+    "\"\<~/OneDrive/Medical Sensor/exp5_data2.xlsx\>\"", ",", "form2export2", 
+     ",", "\"\<XLSX\>\""}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coordinates1", "=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"I1", ",", "V"}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"coordinates2", "=", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"I2", ",", "R"}], "}"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotGraph", "=", 
+  RowBox[{"ListLinePlot", "[", "\[IndentingNewLine]", 
+   RowBox[{"coordinates1", ",", "\[IndentingNewLine]", 
+    RowBox[{"PlotMarkers", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Automatic", ",", "14"}], "}"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"GridLinesStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"Black", ",", "Dashed"}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Frame", "\[Rule]", "Automatic"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<I/mA\>\"", ",", "\"\<V/mV\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+    "PlotLabel", "\[Rule]", "\"\<\:5149\:7535\:4e8c\:6781\:7ba1\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"BaseStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "18"}]}], "}"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"PlotGraph", "=", 
+  RowBox[{"ListLinePlot", "[", "\[IndentingNewLine]", 
+   RowBox[{"coordinates2", ",", "\[IndentingNewLine]", 
+    RowBox[{"PlotMarkers", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Automatic", ",", "14"}], "}"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"GridLinesStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"Black", ",", "Dashed"}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Frame", "\[Rule]", "Automatic"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<I/mA\>\"", ",", "\"\<R/k\[CapitalOmega]\>\""}], "}"}]}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"PlotLabel", "\[Rule]", "\"\<\:5149\:654f\:7535\:963b\>\""}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{"BaseStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "18"}]}], "}"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.609717405683339*^9, 3.609717967256772*^9}, {
+   3.6097191422983027`*^9, 3.609719144220174*^9}, {3.609721421643778*^9, 
+   3.6097214406944036`*^9}, {3.609721713839252*^9, 3.609721713963559*^9}, {
+   3.609721796851075*^9, 3.6097218350794992`*^9}, {3.6097218679720697`*^9, 
+   3.60972187923496*^9}, {3.609721920677906*^9, 3.609721969551959*^9}, {
+   3.609721999959894*^9, 3.609722207836331*^9}, 3.609722256106978*^9, {
+   3.609722348837779*^9, 3.609722409015135*^9}, {3.609722481946364*^9, 
+   3.609722526430077*^9}, {3.609722570949532*^9, 3.609722662128615*^9}, {
+   3.609722714553899*^9, 3.609722716815157*^9}, {3.609723047462935*^9, 
+   3.609723079950964*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   GraphicsComplexBox[{{2., 69.5}, {4., 134.7}, {6., 203.5}, {8., 272.4}, {
+    10., 341.7}, {12., 410.}, {14., 479.}, {16., 548.}, {18., 616.}, {20., 
+    678.}}, {{{}, {}, 
+      {GrayLevel[0], LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]}}, {
+      {GrayLevel[0], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 1], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 2], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 3], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 4], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 5], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 6], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 7], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 8], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 9], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 10]}, {}}}], {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  BaseStyle->{FontWeight -> "Bold", FontSize -> 18},
+  Frame->Automatic,
+  FrameLabel->{
+    FormBox["\"I/mA\"", TraditionalForm], 
+    FormBox["\"V/mV\"", TraditionalForm]},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0], 
+    Dashing[{Small, Small}]],
+  ImageSize->{1580.03515625, Automatic},
+  Method->{},
+  PlotLabel->FormBox["\"\:5149\:7535\:4e8c\:6781\:7ba1\"", TraditionalForm],
+  PlotRange->{{0, 20.}, {0, 678.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.4, 0.4}, {13.56, 13.56}}]], "Output",
+ CellChangeTimes->{{3.609722515755086*^9, 3.609722526994343*^9}, 
+   3.609722667957909*^9, 3.609722717402663*^9, {3.609723062028318*^9, 
+   3.60972308071489*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   GraphicsComplexBox[{{0.5, 3.583}, {1., 2.037}, {1.5, 1.503}, {2., 1.23}, {
+    4., 0.775}, {6., 0.605}, {8., 0.511}, {10., 0.451}, {12., 0.408}, {14., 
+    0.375}, {16., 0.3511}, {18., 0.3312}, {20., 0.3144}}, {{{}, {}, 
+      {GrayLevel[0], 
+       LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}]}}, {
+      {GrayLevel[0], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 1], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 2], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 3], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 4], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 5], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 6], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 7], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 8], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 9], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 10], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 11], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 12], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->14], 13]}, {}}}], {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  BaseStyle->{FontWeight -> "Bold", FontSize -> 18},
+  Frame->Automatic,
+  FrameLabel->{
+    FormBox["\"I/mA\"", TraditionalForm], 
+    FormBox["\"R/k\[CapitalOmega]\"", TraditionalForm]},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0], 
+    Dashing[{Small, Small}]],
+  ImageSize->{1611.18359375, Automatic},
+  Method->{},
+  PlotLabel->FormBox["\"\:5149\:654f\:7535\:963b\"", TraditionalForm],
+  PlotRange->{{0, 20.}, {0, 3.583}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.4, 0.4}, {0.07166, 0.07166}}]], "Output",
+ CellChangeTimes->{{3.609722515755086*^9, 3.609722526994343*^9}, 
+   3.609722667957909*^9, 3.609722717402663*^9, {3.609723062028318*^9, 
+   3.6097230807558813`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1676, 1006},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 5694, 139, 677, "Input"],
+Cell[6276, 163, 2223, 57, 1062, "Output"],
+Cell[8502, 222, 2647, 67, 1049, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

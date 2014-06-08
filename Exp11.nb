@@ -1,0 +1,245 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8762,        236]
+NotebookOptionsPosition[      8390,        218]
+NotebookOutlinePosition[      8748,        234]
+CellTagsIndexPosition[      8705,        231]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "Exp11", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"temperature", "=", 
+     RowBox[{"Range", "[", 
+      RowBox[{"50", ",", "100", ",", "5"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"volts", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "0", ",", "0.56", ",", "1.35", ",", "2.31", ",", "3.20", ",", "4.00", 
+       ",", "4.80", ",", "5.63", ",", "6.40", ",", "7.35", ",", "8.10"}], 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"coordinatesExp11", "=", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"temperature", ",", "volts"}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"linearFitExp11", "=", 
+     RowBox[{"LinearModelFit", "[", 
+      RowBox[{"coordinatesExp11", ",", "x", ",", "x"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PlotGraph", "=", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{"coordinatesExp11", ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotMarkers", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Automatic", ",", "18"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"GridLinesStyle", "\[Rule]", 
+        RowBox[{"Directive", "[", 
+         RowBox[{"Black", ",", "Dashed"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Frame", "\[Rule]", "Automatic"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"FrameLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<T/\[Degree]C\>\"", ",", "\"\<V/V\>\""}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "PlotLabel", "\[Rule]", 
+        "\"\<Pt100\:70ed\:7535\:963b\:7684\:7279\:6027\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"BaseStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+          RowBox[{"FontSize", "\[Rule]", "18"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"regressionExp11", "=", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Normal", "[", "linearFitExp11", "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"Max", "[", "temperature", "]"}], ",", 
+         RowBox[{"Min", "[", "temperature", "]"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Black", ",", "Thick"}], "}"}]}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"errorExp11", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Max", "[", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"linearFitExp11", "[", "\"\<FitResiduals\>\"", "]"}], "]"}], 
+       "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Max", "[", "temperature", "]"}], "-", 
+        RowBox[{"Min", "[", "temperature", "]"}]}], ")"}]}], "//", 
+     "ScientificForm"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", 
+    RowBox[{"PlotGraph", ",", "regressionExp11"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6111959899536133`*^9, 3.6111960035601397`*^9}, {
+  3.6111961915691423`*^9, 3.611196200253385*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox[
+   RowBox[{"\<\"3.31818\"\>", "\[Times]", 
+    SuperscriptBox["10", "\<\"-3\"\>"]}],
+   0.003318181818181678,
+   AutoDelete->True],
+  ScientificForm]], "Output",
+ CellChangeTimes->{
+  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004301745*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGAQA2IQDQGeDgzIoMHb4U3gDrnW1w/tIQJ+DrNmgsBXCN8h
+wKFaZJ37wyomiL6GQKg8J4R/IAhqngCUDnEwBgNhCN8h1KH1NcgCMaj+MKh+
+Saj+cIc0MJCF6o+E6ldwGGruBQDDpFE+
+     "], {
+      {GrayLevel[0], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 12], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 13], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 14], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 15], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 16], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 17], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 18], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 19], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 20], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 21], InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->18], 22]}, {}}], {}}, {{}, {}, 
+    {GrayLevel[0], Thickness[Large], LineBox[CompressedData["
+1:eJwVT2tUjAkAnR7Te6jYkV7ztaXGIlEr2+u7NtvW1NQ8qvk4rdLKI1S7K3Zt
+kWNOhGqcHpqx6amwK6ySCTPOqMXRk0RMZUtJJ0wviho7++Oee+65955zr1N8
+siBBn0ajcXX4nwURuSY0WgjgQ3+d4deklIx3ZL7X0+ksYRL/daOyrWAh/Y1B
+CGhPyyacChuVYWqp3jPjENxODdCq3t1RBu2o/Hh1vi5/Zd8CeoVK6XtYPrqN
+pfPdRvyzTG8rXeoH2tsCdP1lZ5Y4X6xTTjmulZak67SHn2sue5eyJy4P7XQO
+oAq3Z9j9Q05RhmkfxRzQRukdRP5j8u13SqcqvVAQnSP5fYN95LKzy3v7j4Yi
+7nqm6M7xQbKo4ZL7YuMwpMS2rJxuHCE53w4WvMgNw/YUqdTSW0P2KLZsW8rk
+Iu5etm+SdpwsGZtp3pnHxeVm+8OzBVNkVeG6ENIuHB4Bvi/ECdOkeuzMBgtZ
+OGgxk/3+9E/k5Lqgzo3MCLCt3tFvn5ojeYalCT7FEbgu9WM5rqJht+JIUxaD
+B0O9iJw9B/Tw+GrRgILPw7DjUpN7r/RxsaL1Wm0+DykmLtYZHEMUJ82PdHvE
+Azt4NIlXQMeln8+n9TP5SAlI63KYNUI3PzzZNpqP4WPdEoNQEyxJDHsjk/Gh
+ydZGDdWZoj8tmVD38FEZs/7PFbbmqE8sdpDZCyA+JBJmb7VAzUmXqtI4ASZj
+VhuNtDJwK+/atHOpAEU5z8xjWfPhL9lN294rgKapg/eHlyX6mtLzJp2E6GXZ
+lh15ZQlpV5FmLk6Ifpf7tgdzrJBKMLojzgrhQVcvTg20hmpL1d74YSEEoZ/j
+HKas4Srm9I65RuKoX1ZHh2wBLqq/77ifGAkz0313xeELEWrJy3G8EInyjAdD
+ge8XYmNAOs1rOBLzNnmE18m+wPGzBtqTy6KgYs74LOEy0fkqv2lXYhRO7Gfz
+yyaYIH88aCOpiUK5/Mao3blFUMn3fO3xNgqtFXVXynk2uGaWa3xyeTRaJ5SK
+51M2aM7XT/BJiQaT5c5fcH4xPs5knIi7FI29U/oMEc8WnCKKbJuIBlHtGy6l
+28F8VVS1do0IZxTiJ9n1dnhZGdN9IVWE1Ye8juX8YI8+/q3CErkIlqxgVbaV
+A8a72Y5WMyIYbVc5S+UOSI2Rbwz0ptDM5LZEb3KErU3Fl4r9FNSlvrPWViw8
+qTlVWyenYNgliXxez0L6qtqe1gYKpTe5Fo0NLDjXthsN36CACrPGv26xkCw3
+3WCroJCWIvY8cIcF48bf5w6oKEyb/Wrt1MaCd3dsUPADCqNkbPvWIRZOGbCf
+PlNTGOlkuv5mRsA/c73eZA8Fn+CpQ2/MCQyYbP6K0Ufh6I1HPZsZBFbOk6WR
+/1Jgl0sKOJYE7tpYOFUOUtiSbEa3ZxL4sEKzY/dbCr2m2gGFE4HiyxZ5me8o
+uKerSU9nAoGeS2+WaHT7NA2nq10I5K6Nn/dwnIL9k31CiRsBt8DOv9d8oEBV
+jqk2ryDQ0qR5HjFN4dyidscudwK/BDPoO2Z0f47V7Od4EFByg0SnP1Eo/Gnn
+ak9PAgnt8Rm1sxRevgzJqfYiYC48eL5ljoIXxR6xW0PgyuPTD4e0FMQPjIIk
+3gRE1PVPnz9TeBgwWGb4DYH/AFIiIHU=
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{50., 0},
+  BaseStyle->{FontWeight -> "Bold", FontSize -> 18},
+  Frame->Automatic,
+  FrameLabel->{
+    FormBox["\"T/\[Degree]C\"", TraditionalForm], 
+    FormBox["\"V/V\"", TraditionalForm]},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0], 
+    Dashing[{Small, Small}]],
+  ImageSize->{Automatic, 1093.731840335904},
+  Method->{},
+  PlotLabel->FormBox[
+   "\"\:96c6\:6210\:6e29\:5ea6\:4f20\:611f\:5668\:7684\:7279\:6027\"", 
+    TraditionalForm],
+  PlotRange->{{50., 100.}, {0, 8.1}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{1., 1.}, {0.162, 0.162}}]], "Output",
+ CellChangeTimes->{
+  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004347818*^9}}]
+}, Open  ]]
+},
+WindowSize->{1537, 867},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 3437, 89, 378, "Input"],
+Cell[4019, 113, 297, 9, 43, "Output"],
+Cell[4319, 124, 4055, 91, 1109, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
