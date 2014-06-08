@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      8762,        236]
-NotebookOptionsPosition[      8390,        218]
-NotebookOutlinePosition[      8748,        234]
-CellTagsIndexPosition[      8705,        231]
+NotebookDataLength[     10035,        271]
+NotebookOptionsPosition[      9583,        251]
+NotebookOutlinePosition[      9941,        267]
+CellTagsIndexPosition[      9898,        264]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -107,9 +107,19 @@ Cell[BoxData[
         RowBox[{"Min", "[", "temperature", "]"}]}], ")"}]}], "//", 
      "ScientificForm"}]}], "\[IndentingNewLine]", 
    RowBox[{"Show", "[", 
-    RowBox[{"PlotGraph", ",", "regressionExp11"}], "]"}]}]}]], "Input",
+    RowBox[{"PlotGraph", ",", "regressionExp11"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"fullForm", "=", 
+    RowBox[{"{", 
+     RowBox[{"temperature", ",", "volts"}], "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+    "\"\</Users/timfeirg/Documents/Medical-Sensor-Experiments/Exp11.xlsx\>\"",
+      ",", "fullForm", ",", "\"\<XLSX\>\""}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.6111959899536133`*^9, 3.6111960035601397`*^9}, {
-  3.6111961915691423`*^9, 3.611196200253385*^9}}],
+  3.6111961915691423`*^9, 3.611196200253385*^9}, {3.611198319695094*^9, 
+  3.611198325460987*^9}}],
 
 Cell[BoxData[
  TagBox[
@@ -120,7 +130,8 @@ Cell[BoxData[
    AutoDelete->True],
   ScientificForm]], "Output",
  CellChangeTimes->{
-  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004301745*^9}}],
+  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004301745*^9}, 
+   3.611198327571107*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{{}, GraphicsComplexBox[CompressedData["
@@ -207,13 +218,35 @@ ak9PAgnt8Rm1sxRevgzJqfYiYC48eL5ljoIXxR6xW0PgyuPTD4e0FMQPjIIk
   ImageSize->{Automatic, 1093.731840335904},
   Method->{},
   PlotLabel->FormBox[
-   "\"\:96c6\:6210\:6e29\:5ea6\:4f20\:611f\:5668\:7684\:7279\:6027\"", 
-    TraditionalForm],
+   "\"Pt100\:70ed\:7535\:963b\:7684\:7279\:6027\"", TraditionalForm],
   PlotRange->{{50., 100.}, {0, 8.1}},
   PlotRangeClipping->True,
   PlotRangePadding->{{1., 1.}, {0.162, 0.162}}]], "Output",
  CellChangeTimes->{
-  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004347818*^9}}]
+  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004301745*^9}, 
+   3.61119832757295*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "50", ",", "55", ",", "60", ",", "65", ",", "70", ",", "75", ",", "80", 
+     ",", "85", ",", "90", ",", "95", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0.56`", ",", "1.35`", ",", "2.31`", ",", "3.2`", ",", "4.`", 
+     ",", "4.8`", ",", "5.63`", ",", "6.4`", ",", "7.35`", ",", "8.1`"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004301745*^9}, 
+   3.611198327583029*^9}],
+
+Cell[BoxData["\<\"/Users/timfeirg/Documents/Medical-Sensor-Experiments/Exp11.\
+xlsx\"\>"], "Output",
+ CellChangeTimes->{
+  3.6111958940486507`*^9, {3.61119599704044*^9, 3.611196004301745*^9}, 
+   3.611198327626759*^9}]
 }, Open  ]]
 },
 WindowSize->{1537, 867},
@@ -234,9 +267,11 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 3437, 89, 378, "Input"],
-Cell[4019, 113, 297, 9, 43, "Output"],
-Cell[4319, 124, 4055, 91, 1109, "Output"]
+Cell[579, 22, 3837, 99, 429, "Input"],
+Cell[4419, 123, 323, 10, 43, "Output"],
+Cell[4745, 135, 4056, 91, 1109, "Output"],
+Cell[8804, 228, 542, 14, 28, "Output"],
+Cell[9349, 244, 218, 4, 86, "Output"]
 }, Open  ]]
 }
 ]
